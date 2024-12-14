@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 主题色变量 */
+  --color-primary: #FF69B4;
+  --color-secondary: #FFB6C1;
+  --color-accent: #FF1493;
+  --color-text: #333333;
+  
+  /* 明暗模式背景色 */
+  --background: #ffffff;
+  --foreground: var(--color-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/* 添加一些通用动画类 */
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+}
